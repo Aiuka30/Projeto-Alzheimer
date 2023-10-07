@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+"use client"// Componente SearchReminders
+
+import React, { useState, useEffect } from 'react';
 
 interface Reminder {
   id: number;
@@ -9,8 +11,12 @@ interface SearchRemindersProps {
   reminders: Reminder[];
 }
 
-const SearchReminders: React.FC<SearchRemindersProps> = ({ reminders }) => {
+export const SearchReminders: React.FC<SearchRemindersProps> = ({ reminders }) => {
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
 
   const filteredReminders = reminders.filter((reminder) =>
     reminder.text.toLowerCase().includes(search.toLowerCase())
@@ -22,7 +28,7 @@ const SearchReminders: React.FC<SearchRemindersProps> = ({ reminders }) => {
         type="text" 
         value={search} 
         onChange={(e) => setSearch(e.target.value)}
-        className="p-2 border border-gray-800 rounded mb-9"
+        className="p-2 border-2 border-blue-500 focus:ring-2 focus:ring-blue-600 focus:outline-none rounded mb-6"
         placeholder="Pesquisar lembretes"
       />
 
@@ -37,5 +43,3 @@ const SearchReminders: React.FC<SearchRemindersProps> = ({ reminders }) => {
     </div>
   );
 };
-
-export default SearchReminders;

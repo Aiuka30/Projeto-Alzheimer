@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 139; /* Texto azul escuro */
+  --background-start-rgb: 240, 248, 255; /* Fundo azul muito claro (cor AliceBlue) */
+  --background-end-rgb: 240, 248, 255; /* Fundo azul muito claro (cor AliceBlue) */
+  --transition-time: 0.3s; /* Tempo da transição */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb)); /* Usamos uma cor sólida nesta vez */
+  transition: color var(--transition-time), background-color var(--transition-time); /* Adiciona transição suave para cor de fundo e de texto */
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;  /* Aumentando o tamanho da fonte para telas maiores */
+  }
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 1rem; 
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkblue;
+}
