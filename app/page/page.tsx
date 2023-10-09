@@ -14,9 +14,13 @@ const App = () => {
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl mb-4">Minhas Anotações</h1>
-      <AddReminder onAdd={handleAddReminder} />
+    <div className="p-8 flex flex-col items-center h-screen overflow-auto">
+      <h1 className="text-2xl text-center text-blue-600 mb-2 mt-10 font-bold uppercase tracking-widest animate-pulse scale-150">
+          Minhas Anotações
+      </h1>
+      <div className="mb-20">
+        <AddReminder onAdd={handleAddReminder} />
+      </div>
       <SearchReminders reminders={reminders} />
     </div>
   );

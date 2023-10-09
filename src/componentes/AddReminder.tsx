@@ -13,9 +13,9 @@ export const AddReminder: React.FC<AddReminderProps> = ({ onAdd }) => {
   const [text, setText] = useState('');
 
   const handleAddReminder = () => {
-    if (text !== '') { // Adicione isso para prevenir a adição de lembretes vazios
-      onAdd({ id: Date.now(), text }); 
-      setText(''); 
+    if (text !== '') {
+      onAdd({ id: Date.now(), text });
+      setText('');
     }
   };
 
@@ -26,13 +26,13 @@ export const AddReminder: React.FC<AddReminderProps> = ({ onAdd }) => {
   };
 
   return (
-    <div className="flex gap-2 items-center p-4">
+    <div className="flex gap-2 items-center p-4 justify-center mx-auto w-full max-w-md">
       <input 
         type="text" 
         value={text} 
         onChange={(e) => setText(e.target.value)}
-        onKeyDown={handleKeyDown} // Adicionado este atributo
-        className="p-2 border border-red-400 rounded"
+        onKeyDown={handleKeyDown}
+        className="p-2 border border-red-400 rounded flex-grow"
         placeholder="Insira um lembrete"
       />
       <button 
